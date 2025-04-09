@@ -28,7 +28,7 @@ class EventsModel(models.Model):
     start_time = models.TimeField(default=timezone.now,null=False,blank=False)
     created_at = models.DateField(default=get_today_date)
     location = models.CharField(max_length=255, null=False, blank=False)
-    Organizer = models.ForeignKey(User, on_delete=models.CASCADE,default= 1)
+    Organizer = models.ForeignKey(User, on_delete=models.CASCADE)
     price = models.FloatField(null=False,blank = False,default=0.0)
 
 
