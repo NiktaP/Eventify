@@ -30,3 +30,8 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
 
         fields = ['user', 'registered_at','event','ticket_count']
 
+    def validate_ticket_count(self, value):
+        if value <= 0:
+            raise serializers.ValidationError("Ticket count must be a positive integer.")
+        return value
+
