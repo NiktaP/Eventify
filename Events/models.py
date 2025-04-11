@@ -74,7 +74,7 @@ class EventsModel(models.Model):
 
 class EventRegistration(models.Model):
     event = models.ForeignKey(EventsModel, related_name='registrations', on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default = 1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     registered_at = models.DateTimeField(auto_now_add=True)
     ticket_count = models.PositiveIntegerField(default=1)
 

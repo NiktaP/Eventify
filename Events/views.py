@@ -52,7 +52,7 @@ class EventOrganizerViewSet(viewsets.ModelViewSet):
             return Response({'error': 'You are not the organizer of this event.'},
                             status=status.HTTP_403_FORBIDDEN)
 
-        serializer = EventSerializer_user(event, data=request.data, partial=True)
+        serializer = EventSerializer_Organizer(event, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
